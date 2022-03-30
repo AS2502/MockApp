@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="mock.js"></script>
+        <script>
+           // console.log(document.getElementsByClassName("sidebar"));
+        </script>
+    </head>
+<body>
+    <div class="row">
+
+        <!--Sidebar Start-->
+        <div class="sidenav">
+            <div class="row">
+                <div class="col-12 profile"><h2>My profile</h2></div>
+            </div>
+            <div class="row">
+                <div class="col-12 name"><h2><i class="fa fa-user-circle"></i>Robert Niro</h2></div>
+            </div>
+            <div class="row">
+                <a href="#"><i class="fa fa-tachometer"></i>Dashboards</a>
+            </div>
+            <div class="row">
+                <a href="#"><i class="fa fa-user-plus"></i>Add New User</a>
+            </div>
+            <div class="row">
+                <a href="#"><i class="fa fa-users"></i>Manage Users</a>
+            </div>
+            <div class="row">
+                <a href="#"><i class="fa fa-list"></i>Manage List Items</a>
+            </div>
+            <div class="row">
+                <a href="#"><i class="fa fa-sign-out"></i>Signout</a>
+            </div>
+        </div>
+        <!--Sidebar End-->
+
+        <!-- Main Content-->
+        <div class="main-content">
+            <div class="row">
+                <div class="col-2"><h1>Dashboard</h1></div>
+                <div class="col-10 justify-content-end">Back to Slide ID Manager &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i><a></a></div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <label class="round3">
+                        <input type="checkbox" value="All Technician" id="myCheck" onclick="mycheckbox()"> All Technician
+                    </label>
+                    <!--checkbox click list js-->
+                    <div id="text" style="display:none" class="container_checkbox">
+                        <input type="checkbox" name="Jacob E. Sandoval" value="Jacob E. Sandoval" checked>
+                          <label> Jacob E. Sandoval</label><br>
+                        <input type="checkbox" name="Bruce J. Curtis" value="Bruce J. Curtis" checked>
+                          <label> Bruce J. Curtis</label><br>
+                        <input type="checkbox" name="Sandra D. Goodman" value="Sandra D. Goodman" checked>
+                          <label> Sandra D. Goodman</label><br>
+                        <input type="checkbox" name="James B. Thornburg" value="James B. Thornburg" checked>
+                          <label> James B. Thornburg</label><br>
+                        <input type="checkbox" name="Marshall J. Davis" value="Marshall J. Davis" checked>
+                          <label> Marshall J. Davis</label><br>
+                        <input type="checkbox" name="Mildred K. Astorga" value="Mildred K. Astorga" checked>
+                          <label> Mildred K. Astorga</label><br>
+                        <input type="checkbox" name="Gore Alekseeva" value="Gore Alekseeva" checked>
+                          <label> Gore Alekseeva</label><br>
+                        <input type="checkbox" name="Novella Boni" value="Novella Boni" checked>
+                          <label> Novella Boni</label><br>
+                      
+                    </div>            
+        
+                    <!--end checkbox list-->
+                    <label class="round3">
+                        <input type="checkbox" value="All Scientist"> All Scientist
+                    </label>
+                    <label class="round3">
+                        <input type="checkbox" value="All Pathologist"> All Pathologist
+                    </label><br>
+
+                </div>
+                <div class="col-6 justify-content-end">
+                    <button class="button button1">Week</button>
+                    <button class="button button1" id="mycalender" onclick="mycalender()">Month</button>
+                    <button class="button button1">Custom</button>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 justify-content-end toggle">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label> &nbsp; Show weekends
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <!--Row 1 Card 1 Start-->
+                
+                <div class="col-6 card ml-0 column-content">
+                    <div class="row" style="width:100%;">
+                        <div class="col-10 column-font">
+                            Slide Processed 
+                        </div>
+                        <div class="col-2 justify-content-end">
+                            <a href="#" class="icon " onclick="myFunction()" >
+                            <i class="fa fa-ellipsis-v " style="color:rgb(83, 80, 80); font-size:30px; float: right;"></i>
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-3 column-font">
+                            <span style="color:purple"><b>+367</b></span>
+                        </div>
+                        <div class="col-3 column-font">
+                            <span style="color:red; margin-left: 15%;"><b>+358</b></span>
+                        </div>
+                        <div class="col-3 column-font">
+                            <span style="color:green; margin-left: 25%;"><b>+285</b></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3 column-font">
+                            <span style="color:grey">Technicain</span>
+                        </div>
+                        <div class="col-3 column-font">
+                            <span style="color:grey; margin-left: 20%;">Scientist</span>
+                        </div>
+                        <div class="col-3 column-font">
+                            <span style="color:grey; margin-left: 22%;">Pathologist</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12" style=" padding: 10px 10px 10px 10px;">
+                            <canvas id="multi_line" style="width:100%;max-width:600px; "></canvas>
+                            <script src="mock.js"></script>
+                        </div> 
+                    </div>    
+                </div>
+                  <!--Row 1 Card 1 End-->
+                  <!--Row 1 Card 2 Start-->
+                <div class="col-mis card column-content" >
+                    <div class="row" style="width:100%;">
+                        <div class="col-10 column-font">
+                            Accuracy
+                        </div>
+                        <div class="col-2 justify-content-end">
+                            <a href="#" class="icon " onclick="myFunction()" >
+                            <i class="fa fa-ellipsis-v " style="color:rgb(83, 80, 80); font-size:30px; margin-left: 55px;"></i>
+                            </a>
+                        </div>                        
+                    </div> <br>
+                    <div class="row column-font">
+                        <div  class="progress-bar">
+                            <progress id="file" value="92.23" max="100" class="progress" style="color:purple;">  </progress>
+                            <br>
+                            <span style="color: purple;"><b>92.23%</b></span><span style="color:grey; float: right;" >Technician</span>
+                        </div>
+                    </div>
+                    <div class="row column-font">
+                        <div  class="progress-bar">
+                            <progress id="file" value="92.21" max="100" class="progress" style="color:purple;">  </progress>
+                            <br>
+                            <span style="color: red;"><b>92.21%</b></span>     <span style="color:grey; float: right;" >Scientist</span>
+                        </div>
+                    </div>
+                    <div class="row column-font">
+                        <div  class="progress-bar">
+                            <progress id="file" value="92.89" max="100" class="progress" style="color:purple;">  </progress>
+                            <br>
+                            <span style="color: Green;"><b>92.89%</b></span>  <span style="color:grey; float: right;" >Pathologist</span>
+                        </div>
+                    </div>
+                    <div class="row column-font">
+                        <div class="progress-bar">
+                            <progress id="file" value="92.62" max="100" class="progress" style="color:purple;">  </progress>
+                            <br>
+                             <span style="color: purple;"><b>92.62%</b></span>  <span style="color:#404040; float: right;" ><b>Overall</b></span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!--Row 1 Card 2 End-->
+                 <!--Row 1 Card 3 Start-->
+                <div class="col-3 card  mr-0 column-content"  style="padding: 0px; ">
+                        <div class="row card-top" style="width:100%; background-color: blue;">
+                            
+                            <div class="col-10 column-font card-padding" >
+                                <span style="font-size: 24px; color: white;">2,236,226
+                                    <br>
+                                    Completed</span>
+                            </div>
+                            <div class="col-2 justify-content-end card-padding">
+                                <a href="#" class="icon " onclick="myFunction()" >
+                                <i class="fa fa-ellipsis-v " style="color:white; font-size:30px; margin-left: 55px;"></i>
+                                </a>
+                            </div>                
+                               
+                        </div> <br>
+                        <div class="row card-content card-padding">
+                            <span style="color:rgba(255, 0, 0, 0.733) ; "><b>98,836</b></span>
+                        </div>
+                        <div class="row card-content">
+                            Pending With Scientist
+                        </div><br>
+                        <div class="row card-content card-padding">
+                            <span style="color:rgba(42, 235, 100, 0.788)"><b>89,378</b></span>
+                        </div>
+                        <div class="row card-content">
+                            Pathologist Level
+                            
+                        </div><br>
+                        
+                        <div class="row card-content card-padding">
+                            <span style="color:rgba(55, 30, 196, 0.781)"><b>4,159</b></span>
+                        </div>
+                        <div class="row card-content column-content">
+                            Conflicting Entries
+                            
+                            <p style="color:blue; ">View</p>
+                        </div>
+                                             
+                                     
+                </div>
+
+                 <!--Row 1 Card 3 End-->
+            </div>
+
+            <!--Row 2 Start-->
+            <div class="row">
+                <!--Row 2 Card 1 Start-->
+                
+                <div class="col-6 card ml-0 column-content">
+                    <div class="row" style="width:100%;">
+                        <div class="col-10 column-font">
+                            No. Of Slides With Conflicts 
+                        </div>
+                        <div class="col-2 justify-content-end">
+                            <a href="#" class="icon " onclick="myFunction()" >
+                            <i class="fa fa-ellipsis-v " style="color:rgb(83, 80, 80); font-size:30px; float: right;"></i>
+                            </a>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-3 column-font">
+                            <span style="color:purple"><b>+82</b></span>
+                        </div>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col-12" style=" padding: 10px 10px 10px 10px;">
+                            <img src="data1.jpg" alt="data" width="100%" height="215">
+                        </div> 
+                    </div>    
+                </div>
+                  <!--Row 2 Card 1 End-->
+                  <!--Row 2 Card 2 Start-->
+                <div class="col-mis card column-content" style="padding: 20px 0px 0px 0px;" >
+                    <div class="row" style="width:99%;">
+                        <canvas id="radarchart" width="600" height="600"></canvas>
+                     
+                     
+                          <script src="mock.js"></script>
+                     
+
+                    </div> 
+                   
+                    
+                   
+                 
+                    
+                </div>
+
+                <!--Row 1 Card 2 End-->
+                 <!--Row 1 Card 3 Start-->
+                <div class="col-3 card  mr-0 column-content"  style="padding: 0px; border-radius: 30px;">
+                        <div class="row ">
+                            
+                            <div class="col-10 column-font card-padding" >
+                                Top Conflicts
+                            </div>
+                            <div class="col-2 justify-content-end card-padding">
+                                <a href="#" class="icon " onclick="myFunction()" >
+                                <i class="fa fa-ellipsis-v " style="color:#666666; font-size:30px; float: right;"></i>
+                                </a>
+                            </div>                
+                               
+                        </div> <br>
+                        <div class="row card-content card-padding">
+                            <div class="chart-label" style="background-color: #60bcac;"></div> &nbsp; <span style="font-size: 16px;">Cell Types</span>
+                        </div>
+                        <div class="row card-content card-padding">
+                            <div class="chart-label" style="background-color: #b98823;"></div> &nbsp; <span style="font-size: 16px;">Pattern</span>
+                        </div>
+                        <div class="row card-content card-padding">
+                            <div class="chart-label" style="background-color: #6e578b;"></div> &nbsp; <span style="font-size: 16px;">Cell Fractions</span>
+                        </div>
+                        <div class="row card-content card-padding">
+                            <div class="chart-label" style="background-color: #afafaf;"></div> &nbsp; <span style="font-size: 16px;">Others</span>
+                        </div>
+                        <canvas id="myChart" class="mychart-donut"></canvas>
+                        
+                        <script src="mock.js"></script>
+                                             
+                                     
+                </div>
+
+                 <!--Row 1 Card 3 End-->
+            </div>
+            <!-- Row2 End-->
+           
+            <div class="row" style="padding-top:10px;">
+                <div class="col-12 ml-0 card-padding" style="background-color: white; height:auto; display: block;">
+                   <div class="row" style="width: 100%;">
+                        <div class="col-10  card-content ">
+                            <label class="specie">Most Number Of Entries For</label>
+                            <select name="specie" id="specie" class="specie ">
+                                <option value="Specie">Specie</option>
+                                <option value="Tissue">Tissue</option>
+                                <option value="Matrix">Matrix</option>
+                                <option value="Format">Format</option>
+                                <option value="Modality">Modality</option>
+                                <option value="Visualization">Visualization</option>
+                                <option value="Measure">Measure</option>
+                                <option value="Pattern">Pattern</option>
+                              </select>
+                        </div>
+                       
+                        <div class="col-2">
+                            <a href="#" class="icon " onclick="myFunction()" >
+                                <i class="fa fa-ellipsis-v " style="color:#666666; font-size:30px; float: right;"></i>
+                                </a>
+                        </div>
+                    </div>
+                    <div id="myPlot" ></div>
+
+                 
+                    <script src="mock.js"></script>
+                   
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 card-padding justify-content-end" ><span class="card-content">View Audit Log &nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></span></div>
+               
+            </div>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    
+                   
+                    <button class="button button2">Download CSV</button>
+                    <button class="button button2" >Download Print</button>
+                    <button class="button button2">Print</button>
+        
+                    
+                    
+
+                </div>
+                <div class="col-6 justify-content-end card-content card-paddingl.">
+                   Slides Deleted: 5,442
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        //console.log(document.getElementsByClassName("sidebar"));
+        
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+    function mycheckbox() {
+      var checkBox = document.getElementById("myCheck");
+      var text = document.getElementById("text");
+      if (checkBox.checked == true){
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    }
+    
+    </script>
+</body>
+</html>
