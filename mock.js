@@ -23,7 +23,44 @@ new Chart("multi_line", {
     legend: {display: false}
   }
 });
+//scatter Graph
+var xyValues = [
+  {x:2, y:80},
+  {x:4, y:82},
+  {x:5, y:79},
+  {x:7, y:75},
+  {x:9, y:77},
+  {x:12, y:82},
+  {x:14, y:84},
+  {x:16, y:75},
+  {x:18, y:72},
+  {x:20, y:70},
+  {x:21, y:73},
+  {x:23, y:75},
+  {x:24, y:79},
+  {x:26, y:84},
+  {x:27, y:80},
+  {x:29, y:85}
+ 
+];
 
+new Chart("myscatter", {
+  type: "scatter",
+  data: {
+    datasets: [{
+      pointRadius: 5,
+      pointBackgroundColor: "#0058a9",
+      data: xyValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      xAxes: [{ticks: {min: 0, max:30}}],
+      yAxes: [{ticks: {min: 0, max:100}}],
+    }
+  }
+});
 
 //Radar Graph
 var marksCanvas = document.getElementById("radarchart");
