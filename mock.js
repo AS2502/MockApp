@@ -8,15 +8,15 @@ new Chart("multi_line", {
     datasets: [{ 
       data: [400,380,337,355,350,330, 310, 325,335,345,370,397],
       borderColor: "red",
-      fill: "red"
+      fill: true
     }, { 
       data: [290,280,276,259,250,260,278,267,287,299,305,310],
       borderColor: "green",
-      fill: "green"
+      fill: true
     }, { 
       data: [210,240,210,250,240,260,246,240,220,240,230,220],
       borderColor: "blue",
-      fill: "blue"
+      fill: true
     }]
   },
   options: {
