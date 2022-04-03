@@ -3,6 +3,41 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* 
+List Dropdown onclick
+*/
+.dropbtn {
+  background-color: white;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  left: 25%;
+
+}
+
+.dropdown-content span {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.show {display: block;}
+
+
 .row
 {
     display: flex;
@@ -191,28 +226,23 @@ body{
 
       .container_checkbox
       {
-      background-color:rgb(245, 241, 241);
+      background-color:white;
       height:auto;
       color:rgb(10, 10, 10);
       position: absolute;
-      padding:20px 20px 20px 20px;
       margin-top: 43px;
       z-index: 1;
-      left: 10%;
+      left: 8%;
+      top: 16%;
+      box-shadow: 20px 60px 60px 20px rgba(0,0,0,0.2);
       }
-      
-      .container_navb
-      {
-      
-      left:26% !important;
-      width:27%;
-      height:auto !important;
-      z-index : 4;
-      position: fixed;
-      background-color: rgb(187, 183, 183);
-      color:rgb(14, 14, 14);
-      padding:20px 20px 20px 20px;
+      .container_checkbox span {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
       }
+  
 
        /* Togle Switch*/
   .switch {

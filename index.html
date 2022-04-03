@@ -59,22 +59,22 @@
                     </label>
                     <!--checkbox click list js-->
                     <div id="text" style="display:none" class="container_checkbox">
-                        <input type="checkbox" name="Jacob E. Sandoval" value="Jacob E. Sandoval" checked>
-                          <label> Jacob E. Sandoval</label><br>
-                        <input type="checkbox" name="Bruce J. Curtis" value="Bruce J. Curtis" checked>
-                          <label> Bruce J. Curtis</label><br>
-                        <input type="checkbox" name="Sandra D. Goodman" value="Sandra D. Goodman" checked>
-                          <label> Sandra D. Goodman</label><br>
-                        <input type="checkbox" name="James B. Thornburg" value="James B. Thornburg" checked>
-                          <label> James B. Thornburg</label><br>
-                        <input type="checkbox" name="Marshall J. Davis" value="Marshall J. Davis" checked>
-                          <label> Marshall J. Davis</label><br>
-                        <input type="checkbox" name="Mildred K. Astorga" value="Mildred K. Astorga" checked>
-                          <label> Mildred K. Astorga</label><br>
-                        <input type="checkbox" name="Gore Alekseeva" value="Gore Alekseeva" checked>
-                          <label> Gore Alekseeva</label><br>
-                        <input type="checkbox" name="Novella Boni" value="Novella Boni" checked>
-                          <label> Novella Boni</label><br>
+                        <span> <input type="checkbox" name="Jacob E. Sandoval" value="Jacob E. Sandoval" checked>
+                          <label> Jacob E. Sandoval</label><br></span>
+                        <span><input type="checkbox" name="Bruce J. Curtis" value="Bruce J. Curtis" checked>
+                          <label> Bruce J. Curtis</label><br></span>
+                        <span><input type="checkbox" name="Sandra D. Goodman" value="Sandra D. Goodman" checked>
+                          <label> Sandra D. Goodman</label><br></span>
+                        <span><input type="checkbox" name="James B. Thornburg" value="James B. Thornburg" checked>
+                          <label> James B. Thornburg</label><br></span>
+                        <span><input type="checkbox" name="Marshall J. Davis" value="Marshall J. Davis" checked>
+                          <label> Marshall J. Davis</label><br></span>
+                        <span><input type="checkbox" name="Mildred K. Astorga" value="Mildred K. Astorga" checked>
+                          <label> Mildred K. Astorga</label><br></span>
+                        <span><input type="checkbox" name="Gore Alekseeva" value="Gore Alekseeva" checked>
+                          <label> Gore Alekseeva</label><br></span>
+                        <span><input type="checkbox" name="Novella Boni" value="Novella Boni" checked>
+                          <label> Novella Boni</label><br></span>
                       
                     </div>            
         
@@ -112,10 +112,25 @@
                         <div class="col-10 column-font">
                             Slide Processed 
                         </div>
-                        <div class="col-2 justify-content-end">
-                            <a href="#" class="icon " onclick="myFunction()" >
-                            <i class="fa fa-ellipsis-v " style="color:rgb(83, 80, 80); font-size:30px; float: right;"></i>
-                            </a>
+                        <div class="col-2  dropdown justify-content-end">
+                            <button onclick="myFunction()" class="dropbtn">
+                                <i class="fa fa-ellipsis-v " style="color:rgb(83, 80, 80); font-size:30px; float: right; "></i>
+                                </button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <span><i class="fa fa-info-circle" style="margin-right: 10px;"></i>Chart Info<br></span>
+                                    
+                                    <span><i class="fa fa-share" style="margin-right: 10px;"></i>Open Technician slides table<br></span>
+                                    <span><i class="fa fa-share" style="margin-right: 10px;"></i>Open Scientist slides table<br></span>
+                                    <span><i class="fa fa-share" style="margin-right: 10px;"></i>Open Pathologist slides table<br></span>
+                                    <span><input type="checkbox" name="Hide Pathologist Data" value="Hide Pathologist Data" >
+                                    <label> Hide Pathologist Data</label><br></span>
+                                    <span><input type="checkbox" name="Hide Pathologist Data" value="Hide Pathologist Data" >
+                                    <label> Hide Pathologist Data</label><br></span>
+                                     <span><input type="checkbox" name="Hide Pathologist Data" value="Hide Pathologist Data" >
+                                    <label> Hide Pathologist Data</label><br></span>
+
+                                </div>
+                            
                         </div>                        
                     </div>
                     <div class="row">
